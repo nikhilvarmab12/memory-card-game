@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+<div class="start-screen" id="startScreen">
+
+    <h2>🎮 Memory Card Game</h2>
+
+    <p>Match all cards as fast as possible!</p>
+
+    <input 
+    type="text" 
+    id="playerName" 
+    placeholder="Enter Your Name"/>
+
+    <select id="difficulty">
+
+    <option value="easy">Easy</option>
+
+    <option value="medium" selected>Medium</option>
+
+    <option value="hard">Hard</option>
+
+</select>
+
+    <button id="startButton">Start Game</button>
+
+</div>
+        <h1>Memory Card Game</h1>
+
+        <div class="game-info">
+            <p>Moves: <span id="moves">0</span></p>
+            <p>Time: <span id="time">0</span> seconds</p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+
+        <div class="game-board" id="gameBoard">
+            <!-- Cards-->
+        </div>
+
+        <div class="game-message">
+            <!-- Game messages  -->
+        </div>
+
+        <div class="game-controls">
+            <button id="restart">Restart Game</button>
+            <button id="pauseButton">Pause</button>
+           <button id="exitButton">Exit</button>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="leaderboard">
+
+            <h2>🏆 Best Score</h2>
+
+            <p>Name: <span id="bestPlayer">---</span></p>
+
+            <p>Moves: <span id="bestMoves">0</span></p>
+
+            <p>Time: <span id="bestTime">0</span> sec</p>
+
+            <p>Difficulty: <span id="bestDifficulty">---</span></p>
+
+        </div>
+
+        <!-- Achievements -->
+<div class="achievements">
+
+    <h2>🏅 Achievements</h2>
+
+    <ul id="achievementList">
+
+    </ul>
+
+</div>
+
+        <!-- Victory Screen -->
+<div class="victory-screen hidden" id="victoryScreen">
+
+    <h2>🎉 You Won!</h2>
+
+    <p id="finalStats"></p>
+
+<div class="victory-buttons">
+
+    <button id="playAgainButton">
+        Play Again
+    </button>
+
+    <button id="nextLevelButton">
+        Next Level
+    </button>
+
+    <button id="closeVictoryButton">
+        Close
+    </button>
+
+</div>
+</div>
+
+<!-- Confetti -->
+<div class="confetti-container" id="confettiContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
