@@ -32,13 +32,15 @@ A modern Memory Card Game built using HTML, CSS, and JavaScript.
 - Debugging and Problem Solving
 
 ## 📸 Screenshots
+<img width="1357" height="1125" alt="Screenshot 2026-05-23 195738" src="https://github.com/user-attachments/assets/72b4fac6-a0b0-4919-aedb-ee182132e96a" />
+<img width="1170" height="1180" alt="Screenshot 2026-05-23 195809" src="https://github.com/user-attachments/assets/02b8686e-a071-4c17-bf14-c7d85b3fc28e" />
+<img width="1089" height="1142" alt="Screenshot 2026-05-23 195959" src="https://github.com/user-attachments/assets/24867318-3ded-41da-b62c-35bff82b86eb" />
+<img width="1034" height="1157" alt="Screenshot 2026-05-23 200014" src="https://github.com/user-attachments/assets/0eb542c5-5c71-4b50-bc5f-82aab276fc07" />
 
-(Add screenshots here)
 
 ## 🌐 Live Demo
 
-(Add deployment link here)
-
+https://nikhilvarmab12.github.io/memory-card-game/
 ## 📂 GitHub Repository
 
-(Add repo link here)
+https://github.com/nikhilvarmab12/memory-card-game  
