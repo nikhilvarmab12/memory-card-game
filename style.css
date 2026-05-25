@@ -1,7 +1,4 @@
-/* ============================================
-   MOBILE-FIRST RESPONSIVE CSS
-   Memory Card Game - Optimized for All Devices
-   ============================================ */
+ 
 
 * {
     margin: 0;
@@ -43,9 +40,7 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   START SCREEN - MOBILE OPTIMIZED
-   ============================================ */
+ 
 
 .start-screen {
     position: absolute;
@@ -119,9 +114,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   GAME TITLE & INFO - RESPONSIVE
-   ============================================ */
+ 
 
 h1 {
     margin: 12px 0 16px 0;
@@ -154,9 +147,7 @@ h1 {
     color: #00d9ff;
 }
 
-/* ============================================
-   GAME BOARD - MOBILE FIRST
-   ============================================ */
+ 
 
 .game-board {
     display: grid;
@@ -169,20 +160,20 @@ h1 {
     overflow-y: auto;
 }
 
-/* Mobile: 2 columns */
+ 
 .game-board {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
 }
 
-/* Tablet: 4 columns */
+ 
 @media (min-width: 480px) {
     .game-board {
         grid-template-columns: repeat(4, 100px);
     }
 }
 
-/* Desktop: variable columns */
+ 
 @media (min-width: 768px) {
     .game-board {
         grid-template-columns: repeat(4, 120px);
@@ -195,9 +186,7 @@ h1 {
     }
 }
 
-/* ============================================
-   CARD STYLES - TOUCH-FRIENDLY
-   ============================================ */
+ 
 
 .card {
     aspect-ratio: 1;
@@ -237,9 +226,7 @@ h1 {
     border-color: #00d9ff;
 }
 
-/* ============================================
-   GAME CONTROLS - TOUCH-OPTIMIZED
-   ============================================ */
+ 
 
 .game-controls {
     width: 100%;
@@ -268,9 +255,7 @@ h1 {
     }
 }
 
-/* ============================================
-   BUTTONS - MOBILE FRIENDLY
-   ============================================ */
+ 
 
 button {
     padding: 12px 20px;
@@ -300,9 +285,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* ============================================
-   LEADERBOARD - RESPONSIVE
-   ============================================ */
+ 
 
 .leaderboard {
     margin-top: 16px;
@@ -331,9 +314,7 @@ button:disabled {
     font-weight: bold;
 }
 
-/* ============================================
-   ACHIEVEMENTS - RESPONSIVE
-   ============================================ */
+ 
 
 .achievements {
     margin-top: 16px;
@@ -368,9 +349,7 @@ button:disabled {
     border-left: 3px solid #ffd700;
 }
 
-/* ============================================
-   VICTORY SCREEN - FULLSCREEN
-   ============================================ */
+ 
 
 .victory-screen {
     position: fixed;
@@ -419,9 +398,7 @@ button:disabled {
     max-width: 200px;
 }
 
-/* ============================================
-   CONFETTI ANIMATION
-   ============================================ */
+ 
 
 .confetti-container {
     position: fixed;
@@ -443,9 +420,7 @@ button:disabled {
     animation: fall linear forwards;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+ 
 
 @keyframes fall {
     to {
@@ -472,17 +447,13 @@ button:disabled {
     }
 }
 
-/* ============================================
-   HIDDEN CLASS
-   ============================================ */
+ 
 
 .hidden {
     display: none !important;
 }
 
-/* ============================================
-   SCROLLBAR STYLING
-   ============================================ */
+ 
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -501,9 +472,7 @@ button:disabled {
     background: rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   MOBILE RESPONSIVE - SMALL PHONES (320px+)
-   ============================================ */
+ 
 
 @media (max-width: 480px) {
     .game-container {
@@ -554,9 +523,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   TABLET - MEDIUM DEVICES (480px - 768px)
-   ============================================ */
+ 
 
 @media (min-width: 480px) and (max-width: 768px) {
     .game-container {
@@ -573,9 +540,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   DESKTOP - LARGE DEVICES (768px+)
-   ============================================ */
+ 
 
 @media (min-width: 768px) {
     body {
@@ -602,9 +567,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   LANDSCAPE MODE - HEIGHT OPTIMIZATION
-   ============================================ */
+ 
 
 @media (max-height: 500px) {
     .game-container {
@@ -635,9 +598,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   ACCESSIBILITY & DARK MODE
-   ============================================ */
+ 
 
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -655,10 +616,7 @@ button:disabled {
     .game-container {
         background: rgba(255, 255, 255, 0.05);
     }
-}/* ============================================
-   MOBILE-FIRST RESPONSIVE CSS
-   Memory Card Game - Optimized for All Devices
-   ============================================ */
+} 
 
 * {
     margin: 0;
@@ -700,9 +658,7 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   START SCREEN - MOBILE OPTIMIZED
-   ============================================ */
+ 
 
 .start-screen {
     position: absolute;
@@ -776,9 +732,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   GAME TITLE & INFO - RESPONSIVE
-   ============================================ */
+ 
 
 h1 {
     margin: 12px 0 16px 0;
@@ -811,9 +765,7 @@ h1 {
     color: #00d9ff;
 }
 
-/* ============================================
-   GAME BOARD - MOBILE FIRST
-   ============================================ */
+ 
 
 .game-board {
     display: grid;
@@ -826,20 +778,20 @@ h1 {
     overflow-y: auto;
 }
 
-/* Mobile: 2 columns */
+ 
 .game-board {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
 }
 
-/* Tablet: 4 columns */
+ 
 @media (min-width: 480px) {
     .game-board {
         grid-template-columns: repeat(4, 100px);
     }
 }
 
-/* Desktop: variable columns */
+ 
 @media (min-width: 768px) {
     .game-board {
         grid-template-columns: repeat(4, 120px);
@@ -852,9 +804,7 @@ h1 {
     }
 }
 
-/* ============================================
-   CARD STYLES - TOUCH-FRIENDLY
-   ============================================ */
+ 
 
 .card {
     aspect-ratio: 1;
@@ -894,9 +844,7 @@ h1 {
     border-color: #00d9ff;
 }
 
-/* ============================================
-   GAME CONTROLS - TOUCH-OPTIMIZED
-   ============================================ */
+ 
 
 .game-controls {
     width: 100%;
@@ -925,9 +873,7 @@ h1 {
     }
 }
 
-/* ============================================
-   BUTTONS - MOBILE FRIENDLY
-   ============================================ */
+ 
 
 button {
     padding: 12px 20px;
@@ -957,9 +903,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* ============================================
-   LEADERBOARD - RESPONSIVE
-   ============================================ */
+ 
 
 .leaderboard {
     margin-top: 16px;
@@ -988,9 +932,7 @@ button:disabled {
     font-weight: bold;
 }
 
-/* ============================================
-   ACHIEVEMENTS - RESPONSIVE
-   ============================================ */
+ 
 
 .achievements {
     margin-top: 16px;
@@ -1025,9 +967,7 @@ button:disabled {
     border-left: 3px solid #ffd700;
 }
 
-/* ============================================
-   VICTORY SCREEN - FULLSCREEN
-   ============================================ */
+ 
 
 .victory-screen {
     position: fixed;
@@ -1076,9 +1016,7 @@ button:disabled {
     max-width: 200px;
 }
 
-/* ============================================
-   CONFETTI ANIMATION
-   ============================================ */
+ 
 
 .confetti-container {
     position: fixed;
@@ -1100,9 +1038,7 @@ button:disabled {
     animation: fall linear forwards;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+ 
 
 @keyframes fall {
     to {
@@ -1129,17 +1065,13 @@ button:disabled {
     }
 }
 
-/* ============================================
-   HIDDEN CLASS
-   ============================================ */
+ 
 
 .hidden {
     display: none !important;
 }
 
-/* ============================================
-   SCROLLBAR STYLING
-   ============================================ */
+ 
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -1158,9 +1090,7 @@ button:disabled {
     background: rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   MOBILE RESPONSIVE - SMALL PHONES (320px+)
-   ============================================ */
+ 
 
 @media (max-width: 480px) {
     .game-container {
@@ -1211,9 +1141,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   TABLET - MEDIUM DEVICES (480px - 768px)
-   ============================================ */
+ 
 
 @media (min-width: 480px) and (max-width: 768px) {
     .game-container {
@@ -1230,9 +1158,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   DESKTOP - LARGE DEVICES (768px+)
-   ============================================ */
+ 
 
 @media (min-width: 768px) {
     body {
@@ -1259,9 +1185,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   LANDSCAPE MODE - HEIGHT OPTIMIZATION
-   ============================================ */
+ 
 
 @media (max-height: 500px) {
     .game-container {
@@ -1292,9 +1216,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   ACCESSIBILITY & DARK MODE
-   ============================================ */
+ 
 
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -1312,10 +1234,7 @@ button:disabled {
     .game-container {
         background: rgba(255, 255, 255, 0.05);
     }
-}/* ============================================
-   MOBILE-FIRST RESPONSIVE CSS
-   Memory Card Game - Optimized for All Devices
-   ============================================ */
+} 
 
 * {
     margin: 0;
@@ -1357,9 +1276,7 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   START SCREEN - MOBILE OPTIMIZED
-   ============================================ */
+ 
 
 .start-screen {
     position: absolute;
@@ -1433,9 +1350,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   GAME TITLE & INFO - RESPONSIVE
-   ============================================ */
+ 
 
 h1 {
     margin: 12px 0 16px 0;
@@ -1468,9 +1383,7 @@ h1 {
     color: #00d9ff;
 }
 
-/* ============================================
-   GAME BOARD - MOBILE FIRST
-   ============================================ */
+ 
 
 .game-board {
     display: grid;
@@ -1483,20 +1396,20 @@ h1 {
     overflow-y: auto;
 }
 
-/* Mobile: 2 columns */
+ 
 .game-board {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
 }
 
-/* Tablet: 4 columns */
+ 
 @media (min-width: 480px) {
     .game-board {
         grid-template-columns: repeat(4, 100px);
     }
 }
 
-/* Desktop: variable columns */
+ 
 @media (min-width: 768px) {
     .game-board {
         grid-template-columns: repeat(4, 120px);
@@ -1509,9 +1422,7 @@ h1 {
     }
 }
 
-/* ============================================
-   CARD STYLES - TOUCH-FRIENDLY
-   ============================================ */
+ 
 
 .card {
     aspect-ratio: 1;
@@ -1551,9 +1462,7 @@ h1 {
     border-color: #00d9ff;
 }
 
-/* ============================================
-   GAME CONTROLS - TOUCH-OPTIMIZED
-   ============================================ */
+ 
 
 .game-controls {
     width: 100%;
@@ -1582,9 +1491,7 @@ h1 {
     }
 }
 
-/* ============================================
-   BUTTONS - MOBILE FRIENDLY
-   ============================================ */
+ 
 
 button {
     padding: 12px 20px;
@@ -1614,9 +1521,7 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* ============================================
-   LEADERBOARD - RESPONSIVE
-   ============================================ */
+ 
 
 .leaderboard {
     margin-top: 16px;
@@ -1645,9 +1550,7 @@ button:disabled {
     font-weight: bold;
 }
 
-/* ============================================
-   ACHIEVEMENTS - RESPONSIVE
-   ============================================ */
+ 
 
 .achievements {
     margin-top: 16px;
@@ -1682,9 +1585,7 @@ button:disabled {
     border-left: 3px solid #ffd700;
 }
 
-/* ============================================
-   VICTORY SCREEN - FULLSCREEN
-   ============================================ */
+ 
 
 .victory-screen {
     position: fixed;
@@ -1733,9 +1634,7 @@ button:disabled {
     max-width: 200px;
 }
 
-/* ============================================
-   CONFETTI ANIMATION
-   ============================================ */
+ 
 
 .confetti-container {
     position: fixed;
@@ -1757,9 +1656,7 @@ button:disabled {
     animation: fall linear forwards;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+ 
 
 @keyframes fall {
     to {
@@ -1786,17 +1683,13 @@ button:disabled {
     }
 }
 
-/* ============================================
-   HIDDEN CLASS
-   ============================================ */
+ 
 
 .hidden {
     display: none !important;
 }
 
-/* ============================================
-   SCROLLBAR STYLING
-   ============================================ */
+ 
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -1815,9 +1708,7 @@ button:disabled {
     background: rgba(0, 217, 255, 0.8);
 }
 
-/* ============================================
-   MOBILE RESPONSIVE - SMALL PHONES (320px+)
-   ============================================ */
+ 
 
 @media (max-width: 480px) {
     .game-container {
@@ -1868,9 +1759,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   TABLET - MEDIUM DEVICES (480px - 768px)
-   ============================================ */
+ 
 
 @media (min-width: 480px) and (max-width: 768px) {
     .game-container {
@@ -1887,9 +1776,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   DESKTOP - LARGE DEVICES (768px+)
-   ============================================ */
+ 
 
 @media (min-width: 768px) {
     body {
@@ -1916,9 +1803,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   LANDSCAPE MODE - HEIGHT OPTIMIZATION
-   ============================================ */
+
 
 @media (max-height: 500px) {
     .game-container {
@@ -1949,9 +1834,7 @@ button:disabled {
     }
 }
 
-/* ============================================
-   ACCESSIBILITY & DARK MODE
-   ============================================ */
+
 
 @media (prefers-reduced-motion: reduce) {
     * {
