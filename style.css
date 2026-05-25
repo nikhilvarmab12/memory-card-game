@@ -1,285 +1,1972 @@
-*{
+/* ============================================
+   MOBILE-FIRST RESPONSIVE CSS
+   Memory Card Game - Optimized for All Devices
+   ============================================ */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
-body{
+
+html {
+    font-size: 14px;
+}
+
+body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#0f172a,#111827);
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #111827);
     color: white;
+    overflow-x: hidden;
 }
-.game-container{
-    width: 90%;
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+
+.game-container {
+    width: 100%;
+    max-width: 100vw;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     overflow: hidden;
     position: relative;
+    min-height: 100vh;
 }
-.start-screen{
+
+/* ============================================
+   START SCREEN - MOBILE OPTIMIZED
+   ============================================ */
+
+.start-screen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    z-index: 100;
-    border-radius: 20px;
-}
-.start-screen h2{
-    font-size: 2.5rem;
-    color: cyan;
-}
-.start-screen p{
-    font-size: 1.2rem;
-}
-
-#playerName{
-    padding: 12px;
-    width: 250px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    font-size: 1rem;
-    text-align: center;
-}
-
-
-#difficulty{
-    padding: 12px;
-    width: 250px;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-}
-
-
-.leaderboard{
-    margin-top: 20px;
     padding: 20px;
-    width: 100%;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 100;
+    border-radius: 16px;
 }
 
-.leaderboard h2{
-    margin-bottom: 15px;
-    color: cyan;
+.start-screen h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    color: #00d9ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
 
-.leaderboard p{
-    margin: 10px 0;
-    font-size: 1rem;
-}
-
-.hidden{
-    display: none;
-}
-
-h1{
+.start-screen p {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #e0e0e0;
     margin-bottom: 20px;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #f8f8f8;
 }
 
-.game-info{
+#playerName,
+#difficulty {
+    padding: 14px 16px;
+    width: 85vw;
+    max-width: 320px;
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#playerName:focus,
+#difficulty:focus {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    border-color: #00ffff;
+}
+
+#startButton {
+    padding: 14px 40px;
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: white;
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: 85vw;
+    max-width: 320px;
+}
+
+#startButton:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   GAME TITLE & INFO - RESPONSIVE
+   ============================================ */
+
+h1 {
+    margin: 12px 0 16px 0;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    color: #f8f8f8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
     flex-wrap: wrap;
+    padding: 0 8px;
 }
 
-.game-board{
+.game-info p {
+    background: rgba(59, 130, 246, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+    min-width: 90px;
+}
+
+.game-info span {
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+/* ============================================
+   GAME BOARD - MOBILE FIRST
+   ============================================ */
+
+.game-board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
+    padding: 8px;
+    margin: 12px 0;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-.card{
-    width: 100px;
-    height: 100px;
+/* Mobile: 2 columns */
+.game-board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+}
+
+/* Tablet: 4 columns */
+@media (min-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(4, 100px);
+    }
+}
+
+/* Desktop: variable columns */
+@media (min-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 120px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-board {
+        grid-template-columns: repeat(6, 100px);
+    }
+}
+
+/* ============================================
+   CARD STYLES - TOUCH-FRIENDLY
+   ============================================ */
+
+.card {
+    aspect-ratio: 1;
     background-color: #1e293b;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
     color: #f8f8f8;
     cursor: pointer;
-    transition: transform 0.5s;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all 0.3s ease;
     transform-style: preserve-3d;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    min-height: 70px;
+    max-width: 100%;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.05);
     background-color: #3b82f6;
+    border-color: #00d9ff;
 }
 
-.card.flipped{
-   background: #3b82f6;
+.card:active {
+    transform: scale(0.95);
+}
+
+.card.flipped {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
     transform: rotateY(180deg);
-    box-shadow:
-                0 0 10px cyan,
-                0 0 20px cyan,
-                0 0 40px cyan;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6),
+                inset 0 0 10px rgba(0, 217, 255, 0.3);
     color: white;
+    border-color: #00d9ff;
 }
 
-.buttons{
-    margin-top: 20px;
+/* ============================================
+   GAME CONTROLS - TOUCH-OPTIMIZED
+   ============================================ */
+
+.game-controls {
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    padding: 0 8px;
 }
 
-button{
-    padding: 10px 20px;
-    font-size: 1.2em;
+.game-controls button {
+    flex: 1;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+@media (min-width: 480px) {
+    .game-controls {
+        gap: 15px;
+    }
+
+    .game-controls button {
+        min-width: 120px;
+        max-width: 180px;
+    }
+}
+
+/* ============================================
+   BUTTONS - MOBILE FRIENDLY
+   ============================================ */
+
+button {
+    padding: 12px 20px;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
     color: #f8f8f8;
-    background-color: #3b82f6;
-    border: none;
-    border-radius: 5px;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 2px solid #00d9ff;
+    border-radius: 8px;
     cursor: pointer;
-   transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
 }
 
-button:hover{
-  transform: scale(1.05);
-
-    box-shadow:
-        0 0 10px cyan,
-        0 0 20px cyan;
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
 }
 
-.victory-screen{
-    position: absolute;
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   LEADERBOARD - RESPONSIVE
+   ============================================ */
+
+.leaderboard {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard h2 {
+    margin-bottom: 12px;
+    color: #00d9ff;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard p {
+    margin: 8px 0;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    line-height: 1.6;
+}
+
+.leaderboard span {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+/* ============================================
+   ACHIEVEMENTS - RESPONSIVE
+   ============================================ */
+
+.achievements {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.achievements h2 {
+    color: #ffd700;
+    margin-bottom: 12px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.achievements ul {
+    list-style: none;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.achievements li {
+    margin: 10px 0;
+    padding: 8px;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    border-left: 3px solid #ffd700;
+}
+
+/* ============================================
+   VICTORY SCREEN - FULLSCREEN
+   ============================================ */
+
+.victory-screen {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    z-index: 20;
-    border-radius: 20px;
-    animation: fadeIn 0.5s ease;
+    padding: 20px;
+    z-index: 200;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
 }
 
-.victory-screen h2{
-    font-size: 3rem;
-    color: gold;
-    text-shadow: 0 0 20px gold;
+.victory-screen h2 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    animation: pulse 1s ease-in-out infinite;
 }
 
-.victory-screen p{
-    font-size: 1.3rem;
+.victory-screen p {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    color: #e0e0e0;
+    line-height: 1.8;
+    max-width: 90vw;
 }
 
-.victory-buttons{
+.victory-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
+    width: 100%;
+    padding: 0 12px;
 }
 
-
-.hidden{
-    display: none;
+.victory-buttons button {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
 }
 
+/* ============================================
+   CONFETTI ANIMATION
+   ============================================ */
 
-.achievements{
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 150;
 }
 
-.achievements h2{
-    color: gold;
-    margin-bottom: 15px;
-}
-
-.achievements ul{
-    list-style: none;
-}
-
-.achievements li{
-    margin: 10px 0;
-    color: white;
-}
-
-.confetti{
+.confetti {
     position: absolute;
     width: 10px;
     height: 10px;
-    background: cyan;
+    background: #00d9ff;
+    border-radius: 50%;
     top: -10px;
     animation: fall linear forwards;
 }
 
-@keyframes fall{
-    to{
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fall {
+    to {
         transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
-
-@keyframes fadeIn{
-    from{
+@keyframes fadeIn {
+    from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
 
-@media (max-width: 600px){
-    .game-board{
-        grid-template-columns: repeat(2, 100px);
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
     }
-    .card{
-        width: 90px;
-        height: 90px;
-        font-size: 1.5rem;
-    }
-    .game-info{
-        gap: 15px;
-        font-size: 1rem;
-    }
-    button{
-        font-size: 1rem;
-        padding: 8px 16px;
+    50% {
+        transform: scale(1.05);
     }
 }
 
+/* ============================================
+   HIDDEN CLASS
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 217, 255, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - SMALL PHONES (320px+)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 12px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        margin: 8px 0 12px 0;
+    }
+
+    .game-board {
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .card {
+        min-height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .game-controls {
+        gap: 8px;
+    }
+
+    .game-controls button {
+        min-width: 90px;
+        max-width: 130px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .leaderboard p,
+    .achievements li {
+        font-size: 0.9rem;
+    }
+
+    .victory-buttons button {
+        min-width: 100px;
+        max-width: 150px;
+    }
+}
+
+/* ============================================
+   TABLET - MEDIUM DEVICES (480px - 768px)
+   ============================================ */
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .game-container {
+        padding: 16px;
+    }
+
+    .card {
+        min-height: 80px;
+        font-size: 2rem;
+    }
+
+    .game-controls button {
+        padding: 11px 18px;
+    }
+}
+
+/* ============================================
+   DESKTOP - LARGE DEVICES (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .game-container {
+        max-width: 900px;
+        padding: 24px;
+    }
+
+    .card {
+        min-height: 100px;
+    }
+
+    .game-controls {
+        gap: 20px;
+    }
+
+    .game-controls button {
+        min-width: 140px;
+        max-width: 200px;
+        padding: 12px 24px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MODE - HEIGHT OPTIMIZATION
+   ============================================ */
+
+@media (max-height: 500px) {
+    .game-container {
+        min-height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    h1 {
+        margin: 5px 0 8px 0;
+        font-size: 1.5rem;
+    }
+
+    .game-info {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .card {
+        min-height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 8px;
+        padding: 10px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & DARK MODE
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0a0e27, #0d1220);
+    }
+
+    .game-container {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}/* ============================================
+   MOBILE-FIRST RESPONSIVE CSS
+   Memory Card Game - Optimized for All Devices
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    color: white;
+    overflow-x: hidden;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 100vw;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* ============================================
+   START SCREEN - MOBILE OPTIMIZED
+   ============================================ */
+
+.start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 100;
+    border-radius: 16px;
+}
+
+.start-screen h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    color: #00d9ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.start-screen p {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+#playerName,
+#difficulty {
+    padding: 14px 16px;
+    width: 85vw;
+    max-width: 320px;
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#playerName:focus,
+#difficulty:focus {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    border-color: #00ffff;
+}
+
+#startButton {
+    padding: 14px 40px;
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: white;
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: 85vw;
+    max-width: 320px;
+}
+
+#startButton:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   GAME TITLE & INFO - RESPONSIVE
+   ============================================ */
+
+h1 {
+    margin: 12px 0 16px 0;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    color: #f8f8f8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    flex-wrap: wrap;
+    padding: 0 8px;
+}
+
+.game-info p {
+    background: rgba(59, 130, 246, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+    min-width: 90px;
+}
+
+.game-info span {
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+/* ============================================
+   GAME BOARD - MOBILE FIRST
+   ============================================ */
+
+.game-board {
+    display: grid;
+    gap: 12px;
+    justify-content: center;
+    padding: 8px;
+    margin: 12px 0;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Mobile: 2 columns */
+.game-board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+}
+
+/* Tablet: 4 columns */
+@media (min-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(4, 100px);
+    }
+}
+
+/* Desktop: variable columns */
+@media (min-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 120px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-board {
+        grid-template-columns: repeat(6, 100px);
+    }
+}
+
+/* ============================================
+   CARD STYLES - TOUCH-FRIENDLY
+   ============================================ */
+
+.card {
+    aspect-ratio: 1;
+    background-color: #1e293b;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    color: #f8f8f8;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    min-height: 70px;
+    max-width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #3b82f6;
+    border-color: #00d9ff;
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
+.card.flipped {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    transform: rotateY(180deg);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6),
+                inset 0 0 10px rgba(0, 217, 255, 0.3);
+    color: white;
+    border-color: #00d9ff;
+}
+
+/* ============================================
+   GAME CONTROLS - TOUCH-OPTIMIZED
+   ============================================ */
+
+.game-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    padding: 0 8px;
+}
+
+.game-controls button {
+    flex: 1;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+@media (min-width: 480px) {
+    .game-controls {
+        gap: 15px;
+    }
+
+    .game-controls button {
+        min-width: 120px;
+        max-width: 180px;
+    }
+}
+
+/* ============================================
+   BUTTONS - MOBILE FRIENDLY
+   ============================================ */
+
+button {
+    padding: 12px 20px;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    color: #f8f8f8;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 2px solid #00d9ff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   LEADERBOARD - RESPONSIVE
+   ============================================ */
+
+.leaderboard {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard h2 {
+    margin-bottom: 12px;
+    color: #00d9ff;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard p {
+    margin: 8px 0;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    line-height: 1.6;
+}
+
+.leaderboard span {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+/* ============================================
+   ACHIEVEMENTS - RESPONSIVE
+   ============================================ */
+
+.achievements {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.achievements h2 {
+    color: #ffd700;
+    margin-bottom: 12px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.achievements ul {
+    list-style: none;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.achievements li {
+    margin: 10px 0;
+    padding: 8px;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    border-left: 3px solid #ffd700;
+}
+
+/* ============================================
+   VICTORY SCREEN - FULLSCREEN
+   ============================================ */
+
+.victory-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 200;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+}
+
+.victory-screen h2 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.victory-screen p {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    color: #e0e0e0;
+    line-height: 1.8;
+    max-width: 90vw;
+}
+
+.victory-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.victory-buttons button {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+/* ============================================
+   CONFETTI ANIMATION
+   ============================================ */
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 150;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   HIDDEN CLASS
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 217, 255, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - SMALL PHONES (320px+)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 12px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        margin: 8px 0 12px 0;
+    }
+
+    .game-board {
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .card {
+        min-height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .game-controls {
+        gap: 8px;
+    }
+
+    .game-controls button {
+        min-width: 90px;
+        max-width: 130px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .leaderboard p,
+    .achievements li {
+        font-size: 0.9rem;
+    }
+
+    .victory-buttons button {
+        min-width: 100px;
+        max-width: 150px;
+    }
+}
+
+/* ============================================
+   TABLET - MEDIUM DEVICES (480px - 768px)
+   ============================================ */
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .game-container {
+        padding: 16px;
+    }
+
+    .card {
+        min-height: 80px;
+        font-size: 2rem;
+    }
+
+    .game-controls button {
+        padding: 11px 18px;
+    }
+}
+
+/* ============================================
+   DESKTOP - LARGE DEVICES (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .game-container {
+        max-width: 900px;
+        padding: 24px;
+    }
+
+    .card {
+        min-height: 100px;
+    }
+
+    .game-controls {
+        gap: 20px;
+    }
+
+    .game-controls button {
+        min-width: 140px;
+        max-width: 200px;
+        padding: 12px 24px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MODE - HEIGHT OPTIMIZATION
+   ============================================ */
+
+@media (max-height: 500px) {
+    .game-container {
+        min-height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    h1 {
+        margin: 5px 0 8px 0;
+        font-size: 1.5rem;
+    }
+
+    .game-info {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .card {
+        min-height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 8px;
+        padding: 10px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & DARK MODE
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0a0e27, #0d1220);
+    }
+
+    .game-container {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}/* ============================================
+   MOBILE-FIRST RESPONSIVE CSS
+   Memory Card Game - Optimized for All Devices
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    color: white;
+    overflow-x: hidden;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 100vw;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* ============================================
+   START SCREEN - MOBILE OPTIMIZED
+   ============================================ */
+
+.start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 100;
+    border-radius: 16px;
+}
+
+.start-screen h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    color: #00d9ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.start-screen p {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+#playerName,
+#difficulty {
+    padding: 14px 16px;
+    width: 85vw;
+    max-width: 320px;
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#playerName:focus,
+#difficulty:focus {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    border-color: #00ffff;
+}
+
+#startButton {
+    padding: 14px 40px;
+    font-size: clamp(1rem, 4vw, 1.1rem);
+    color: white;
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: 85vw;
+    max-width: 320px;
+}
+
+#startButton:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   GAME TITLE & INFO - RESPONSIVE
+   ============================================ */
+
+h1 {
+    margin: 12px 0 16px 0;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    color: #f8f8f8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    flex-wrap: wrap;
+    padding: 0 8px;
+}
+
+.game-info p {
+    background: rgba(59, 130, 246, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+    min-width: 90px;
+}
+
+.game-info span {
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+/* ============================================
+   GAME BOARD - MOBILE FIRST
+   ============================================ */
+
+.game-board {
+    display: grid;
+    gap: 12px;
+    justify-content: center;
+    padding: 8px;
+    margin: 12px 0;
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* Mobile: 2 columns */
+.game-board {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+}
+
+/* Tablet: 4 columns */
+@media (min-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(4, 100px);
+    }
+}
+
+/* Desktop: variable columns */
+@media (min-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(4, 120px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-board {
+        grid-template-columns: repeat(6, 100px);
+    }
+}
+
+/* ============================================
+   CARD STYLES - TOUCH-FRIENDLY
+   ============================================ */
+
+.card {
+    aspect-ratio: 1;
+    background-color: #1e293b;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    color: #f8f8f8;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    min-height: 70px;
+    max-width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #3b82f6;
+    border-color: #00d9ff;
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
+.card.flipped {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    transform: rotateY(180deg);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6),
+                inset 0 0 10px rgba(0, 217, 255, 0.3);
+    color: white;
+    border-color: #00d9ff;
+}
+
+/* ============================================
+   GAME CONTROLS - TOUCH-OPTIMIZED
+   ============================================ */
+
+.game-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+    padding: 0 8px;
+}
+
+.game-controls button {
+    flex: 1;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+@media (min-width: 480px) {
+    .game-controls {
+        gap: 15px;
+    }
+
+    .game-controls button {
+        min-width: 120px;
+        max-width: 180px;
+    }
+}
+
+/* ============================================
+   BUTTONS - MOBILE FRIENDLY
+   ============================================ */
+
+button {
+    padding: 12px 20px;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    color: #f8f8f8;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    border: 2px solid #00d9ff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   LEADERBOARD - RESPONSIVE
+   ============================================ */
+
+.leaderboard {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard h2 {
+    margin-bottom: 12px;
+    color: #00d9ff;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.leaderboard p {
+    margin: 8px 0;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    line-height: 1.6;
+}
+
+.leaderboard span {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+/* ============================================
+   ACHIEVEMENTS - RESPONSIVE
+   ============================================ */
+
+.achievements {
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.achievements h2 {
+    color: #ffd700;
+    margin-bottom: 12px;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.achievements ul {
+    list-style: none;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.achievements li {
+    margin: 10px 0;
+    padding: 8px;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    border-left: 3px solid #ffd700;
+}
+
+/* ============================================
+   VICTORY SCREEN - FULLSCREEN
+   ============================================ */
+
+.victory-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 200;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+}
+
+.victory-screen h2 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.victory-screen p {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    color: #e0e0e0;
+    line-height: 1.8;
+    max-width: 90vw;
+}
+
+.victory-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.victory-buttons button {
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+/* ============================================
+   CONFETTI ANIMATION
+   ============================================ */
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 150;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   HIDDEN CLASS
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 217, 255, 0.5);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 217, 255, 0.8);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - SMALL PHONES (320px+)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 12px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        margin: 8px 0 12px 0;
+    }
+
+    .game-board {
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .card {
+        min-height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .game-controls {
+        gap: 8px;
+    }
+
+    .game-controls button {
+        min-width: 90px;
+        max-width: 130px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .leaderboard p,
+    .achievements li {
+        font-size: 0.9rem;
+    }
+
+    .victory-buttons button {
+        min-width: 100px;
+        max-width: 150px;
+    }
+}
+
+/* ============================================
+   TABLET - MEDIUM DEVICES (480px - 768px)
+   ============================================ */
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .game-container {
+        padding: 16px;
+    }
+
+    .card {
+        min-height: 80px;
+        font-size: 2rem;
+    }
+
+    .game-controls button {
+        padding: 11px 18px;
+    }
+}
+
+/* ============================================
+   DESKTOP - LARGE DEVICES (768px+)
+   ============================================ */
+
+@media (min-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .game-container {
+        max-width: 900px;
+        padding: 24px;
+    }
+
+    .card {
+        min-height: 100px;
+    }
+
+    .game-controls {
+        gap: 20px;
+    }
+
+    .game-controls button {
+        min-width: 140px;
+        max-width: 200px;
+        padding: 12px 24px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MODE - HEIGHT OPTIMIZATION
+   ============================================ */
+
+@media (max-height: 500px) {
+    .game-container {
+        min-height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    h1 {
+        margin: 5px 0 8px 0;
+        font-size: 1.5rem;
+    }
+
+    .game-info {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .card {
+        min-height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .leaderboard,
+    .achievements {
+        margin-top: 8px;
+        padding: 10px;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & DARK MODE
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #0a0e27, #0d1220);
+    }
+
+    .game-container {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
