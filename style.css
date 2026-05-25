@@ -1710,7 +1710,7 @@ button:disabled {
 
  
 
-@media (max-width:768px) {
+@media (max-width:800px) {
     .game-container {
         padding: 12px;
         gap: 12px;
@@ -1761,7 +1761,7 @@ button:disabled {
 
  
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media (min-width: 360px) and (max-width: 800px) {
     .game-container {
         padding: 16px;
     }
@@ -1778,7 +1778,7 @@ button:disabled {
 
  
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     body {
         padding: 20px;
     }
@@ -1805,7 +1805,7 @@ button:disabled {
 
 
 
-@media (max-height: 480px) {
+@media (max-height: 360px) {
     .game-container {
         min-height: auto;
         padding: 10px;
